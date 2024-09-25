@@ -7,21 +7,30 @@ public class App
     
 
     public static void main ( String[] args ) {
-        Scanner reader = new Scanner(System.in);
-       
-        int first = Integer.valueOf(reader.nextLine());
-        int second = Integer.valueOf(reader.nextLine());
+        Scanner scanner = new Scanner(System.in);
+        
+            while (true) {
+                System.out.println("Give a number:");
+                int number = Integer.valueOf(scanner.nextLine());
+                 if (number == 0) {
+                    break;
+                 }
 
-        if (first > second) {
-            System.out.println(first + " is greater than " + second);
-        }if (first < second) {
-            System.out.println(first + " is smaller than " + second);
-        }if (first == second) {
-            System.out.println(first + " is equal than " + second);
+                 if (number < 0) {
+                    System.out.println("Unsuitable number");
+                     continue;
+                }
+                System.out.print(number * number);
+            }
+        
             
+        }
+        
+        
 }
-}
-}
+
+
+
 
 
 
