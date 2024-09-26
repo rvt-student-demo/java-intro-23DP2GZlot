@@ -9,20 +9,36 @@ public class App
     public static void main ( String[] args ) {
         Scanner scanner = new Scanner(System.in);
         
-        System.out.println("Give a number: ");
-        int i = 1;
-        int res = 1;
-        int number = Integer.valueOf(scanner.nextLine());
-        for (i = 2; i <= number; i++) 
-           res *= i; 
-        System.out.println("Factorial: " + res);
-       
-          
-     
-    
-       
-            
+        int sum = 0;
+        int ones = 0;
+        int evenNumbers = 0;
+        System.out.println("Give a number:");
+            while (true) {
+                int number = Integer.valueOf(scanner.nextLine());
+                
+                 if (number == -1) {
+                    System.out.println("Thx! Bye!");
+                    System.out.println("Sum: " + sum );
+                    System.out.println("Numbers: " + ones );
+                    System.out.println("Average: " + (double)sum / ones );
+                    System.out.println("Even: " + number / 2);
+                    break;
+                    if (number % 2 == 0){
+                        evenNumbers++;
+
+
+                       
+                 }
+                else{
+                    ones = ones + 1;
+                    sum = sum + number;
+
+
+                    continue;
+                 }
+                 
 }
+    }
 }
         
         
