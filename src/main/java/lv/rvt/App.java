@@ -12,6 +12,7 @@ public class App
         int sum = 0;
         int ones = 0;
         int evenNumbers = 0;
+        int oddNumbers = 0;
         System.out.println("Give a number:");
             while (true) {
                 int number = Integer.valueOf(scanner.nextLine());
@@ -21,10 +22,16 @@ public class App
                     System.out.println("Sum: " + sum );
                     System.out.println("Numbers: " + ones );
                     System.out.println("Average: " + (double)sum / ones );
-                    System.out.println("Even: " + number / 2);
+                    System.out.println("Even: " + evenNumbers);
+                    System.out.println("Odd: " + oddNumbers);
                     break;
+                 }
                     if (number % 2 == 0){
                         evenNumbers++;
+
+                    if (number % 2 == 0){
+                        evenNumbers++;
+                    }
 
 
                        
@@ -39,7 +46,7 @@ public class App
                  
 }
     }
-}
+    }
         
         
 
