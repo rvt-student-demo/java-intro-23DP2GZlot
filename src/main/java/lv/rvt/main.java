@@ -4,47 +4,31 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class main {
-  public static void main(String[] args){
-  ArrayList<Person> persons = new ArrayList<>();
-  String fileName = "persons.csv";
+    public static void main(String[] args) {
+        // write experimental code here to check how your program functions
 
-  // Step 1: Read the file
-  try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-      String line = reader.readLine(); // Skip the header line
-      while ((line = reader.readLine()) != null) {
-          String[] parts = line.split(",");
-          String name = parts[0];
-          int age = Integer.parseInt(parts[1]);
-          int weight = Integer.parseInt(parts[2]);
-          int height = Integer.parseInt(parts[3]);
-          persons.add(new Person(name, age, height, weight));
+        HealthStation childrensHospital = new HealthStation();
 
-          
+    Person ethan = new Person("Ethan", 1, 110, 7);
+    Person peter = new Person("Peter", 33, 176, 85);
 
-          
-      }
-  } catch (IOException e) {
-      System.err.println("Error reading file: " + e.getMessage());
-  }
+    System.out.println("weighings performed: " + childrensHospital.weighings());
 
-  // Step 2: Print each Person object
-  for (Person person : persons) {
-      System.out.println(person);
-  }
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(peter);
 
-  // Step 3: Calculate and print average age
-  if (!persons.isEmpty()) {
-      double totalAge = 0;
-      for (Person person : persons) {
-        totalAge += person.getAge();
-          
-      }
-      double averageAge = totalAge / persons.size();
-      System.out.printf("Average age: %.2f\n", averageAge);
-  }
-}
+    System.out.println("weighings performed: " + childrensHospital.weighings());
+
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+
+    System.out.println("weighings performed: " + childrensHospital.weighings());
+    }
 
 }
+
 
 
 

@@ -38,6 +38,6 @@ public class Counter {
     @Override
     public String toString(){
         return "Count: " + this.counter;
-    }
+    }                                                      
 }
 
