@@ -1,7 +1,5 @@
 package lv.rvt;
-import java.io.*;
-import java.util.*;
-import java.nio.file.StandardOpenOption;
+
 
 public class Person {
     private String name;

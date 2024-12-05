@@ -1,7 +1,5 @@
 package lv.rvt;
-import java.util.*;
-import java.io.*;
-import java.nio.file.StandardOpenOption;
+
 
 public class App {
     public static void main(String[] args) {
