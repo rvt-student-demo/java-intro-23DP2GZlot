@@ -1,29 +1,27 @@
 package lv.rvt;
-import java.util.*;
-import java.io.*;
-import java.nio.file.StandardOpenOption;
 
 public class Main {
- public static void main(String[] args) throws Exception{
-    Scanner scanner = new Scanner(System.in);
 
-    boolean isProgramRunning = true;
-    System.out.println("Welcome to person manager, type \"help\" to see available commands.");
-    while (isProgramRunning) {
-        String command = scanner.nextLine();
+    public static void main(String[] args) {
+        // you can write code here to try out your program
+        SimpleDate date = new SimpleDate(24, 3, 2017);
+        SimpleDate date2 = new SimpleDate(23, 7, 2017);
 
-        if (command.equals("exit")){
-            System.out.println("Thanks, bye, bye!");
-            isProgramRunning = false;
-        }else if (command.equals("show")){
+        Person leo = new Person("Leo", date, 62, 9);
+        Person lily = new Person("Lily", date2, 65, 8);
 
+        if (leo.equals(lily)) {
+            System.out.println("Is this quite correct?");
         }
 
-        System.out.println("Your command was " + command);
+        Person leoWithDifferentWeight = new Person("Leo", date, 62, 10);
+
+        if (leo.equals(leoWithDifferentWeight)) {
+            System.out.println("Is this quite correct?");
+        }
     }
- }
-    
 }
+
 
 
 

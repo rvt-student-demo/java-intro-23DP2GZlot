@@ -1,63 +1,40 @@
 package lv.rvt;
 
+import java.util.Objects;
 
 public class Person {
+
     private String name;
-    private int age;
+    private SimpleDate birthday;
     private int height;
     private int weight;
 
-    public Person(String name, int age, int height, int weight) {
+    public Person(String name, SimpleDate birthday, int height, int weight) {
         this.name = name;
-        this.age = age;
+        this.birthday = birthday;
         this.height = height;
         this.weight = weight;
     }
 
-    public void printPerson() {
-        System.out.println("My name is " + this.name + " and I am " + this.age + " years old");
-    }
-
-    public void growOlder() {
-        this.age++;
-    }
-
-    public boolean isOfLegalAge() {
-        if (this.age > 17) {
+    // implement an equals method here for checking the equality of objects
+    public boolean equals(Object compared) {
+        
+        if (!(compared instanceof Person)) {
+            return false;
+        }
+        
+        Person comparedPerson = (Person) compared;
+        
+        if (this.name.equals(comparedPerson.name) && 
+                this.birthday.equals(comparedPerson.birthday) &&
+                this.height == comparedPerson.height &&
+                this.weight == comparedPerson.weight) {
             return true;
         }
-
+        
         return false;
-    }
-
-    public void setHeight(int height) {
-        this.height = height;
-    }
-
-    public int getHeight() {
-        return this.height;
-    }
-
-    public int getWeight() {
-        return this.weight;
-    }
-
-    public void setWeight(int weight) {
-        this.weight = weight;
-    }
-
-    public double bmi() {
-        double heightInMeters = this.height / 100.0;
-
-        return this.weight / (heightInMeters * heightInMeters);
-    }
-
-    public String getName() {
-        return this.name;
-    }
-
-    @Override
-    public String toString() {
-        return "My name is " + this.name + " and I am " + this.age + " years old. My BMI is " + this.bmi();
+        
     }
 }
+
+
